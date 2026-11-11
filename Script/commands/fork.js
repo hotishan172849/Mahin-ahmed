@@ -1,39 +1,21 @@
-const CREDITS = "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐";
-
 module.exports.config = {
-  name: "fork",
-  version: "2.3.0",
-  hasPermssion: 0,
-  credits: CREDITS,
-  description: "Stable fork system with repo link",
-  commandCategory: "other",
-  usages: "fork",
-  cooldowns: 3,
+ name: "fork",
+ version: "2.1.0",
+ hasPermssion: 0,
+ credits: "乛 M𝆠፝֟R ཐི༏ཋྀ JU𝆠፝֟W𝆠፝֟ELꜛཐི༏ཋྀ࿐",
+ description: "Stable fork system with live GitHub stats card",
+ commandCategory: "other",
+ usages: "fork",
+ cooldowns: 3,
 };
 
-const OWNER = "MIX-GOAT-MIRAI";
+const OWNER = "mix-goat-mirai";
 const REPO = "MR-JUWEL";
 const repoLink = `https://github.com/${OWNER}/${REPO}`;
 
-// সুরক্ষা: ক্রেডিট বা রিপো লিংক বদলালে কমান্ড কাজ করবে না
-const LOCK = {
-  credits: CREDITS,
-  repo: "https://github.com/mix-goat-mirai/MR-JUWEL",
-};
+module.exports.run = async function({ api, event }) {
 
-module.exports.run = async function ({ api, event }) {
-  if (
-    module.exports.config.credits !== LOCK.credits ||
-    repoLink.toLowerCase() !== LOCK.repo.toLowerCase()
-  ) {
-    return api.sendMessage(
-      "⚠️ ক্রেডিট অথবা রিপো লিংক চেঞ্জ করা হয়েছে, তাই এই কমান্ড কাজ করছে না।",
-      event.threadID,
-      event.messageID
-    );
-  }
-
-  const msg = `
+ const msg = `
 🔥 𝗚𝗢𝗔𝗧 𝗠𝗜𝗥𝗔𝗜 𝗠𝗜𝗫 🔥
 
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -42,8 +24,8 @@ module.exports.run = async function ({ api, event }) {
 ━━━━━━━━━━━━━━━━━━━━━━
 `;
 
-  const setupVideo = "https://youtu.be/kNHDYw8GoQg";
-  const linkMsg = `📌 𝗥𝗘𝗣𝗢 𝗟𝗜𝗡𝗞:\n${repoLink}\n\n🎬 𝗦𝗘𝗧-𝗨𝗣 𝗩𝗜𝗗𝗘𝗢:\n${setupVideo}\n\n⚡ Powered By Juwel`;
+ const setupVideo = "https://youtu.be/kNHDYw8GoQg";
+ const linkMsg = `📌 𝗥𝗘𝗣𝗢 𝗟𝗜𝗡𝗞:\n${repoLink}\n\n🎬 𝗦𝗘𝗧-𝗨𝗣 𝗩𝗜𝗗𝗘𝗢:\n${setupVideo}`;
 
-  return api.sendMessage(msg + "\n" + linkMsg, event.threadID, event.messageID);
+ return api.sendMessage(msg + "\n" + linkMsg, event.threadID, event.messageID);
 };
