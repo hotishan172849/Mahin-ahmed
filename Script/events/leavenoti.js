@@ -54,7 +54,7 @@ module.exports.run = async function ({ api, event, Users }) {
 👤 Name: ${leftName}
 ⚡ Kicked By: ${kickerName}
 ━━━━━━━━━━━━━━━━━━━
-😡 তোমার এই গ্রুপে থাকার কোনো যোগ্যাতা নেই ছাগল!
+😡 তোমার এই গ্রুপে থাকার কোনো যোগ্যাতা নেই 😾!
 🤪 তাই তোমাকে লাথি মেরে গ্রুপ থেকে বের করে দেওয়া হলো!
 🤧 WELLCOME REMOVE🫡👋
 ╚══════════════════╝
